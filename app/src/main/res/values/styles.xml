@@ -15,10 +15,14 @@
     <item name="android:windowSplashScreenBackground">@color/background</item>
     <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
     <item name="android:windowBackground">@color/background</item>
+    <item name="android:statusBarColor">@color/backgroundviolent</item>
+    <item name="android:navigationBarColor">@color/backgroundviolent</item>
 </style>
 <style name="AppTheme.FullScreen" parent="AppTheme">
 <item name="android:windowFullscreen">true</item>
 <item name="android:windowContentOverlay">@null</item>
+    <item name="android:statusBarColor">@color/backgroundviolent</item>
+    <item name="android:navigationBarColor">@color/backgroundviolent</item>
 </style>
 <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar"/>
 <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.MaterialComponents.Light"/>
@@ -33,12 +37,15 @@
     </style>
     
     <style name="Theme.Material3BottomNav" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowLightStatusBar">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/backgroundviolent</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorControlHighlight</item>
         <item name="colorControlNormal">@color/colorControlNormal</item>
+        <item name="android:statusBarColor">@color/backgroundviolent</item>
         <item name="android:navigationBarColor">@color/backgroundviolent</item>
+        <item name="android:windowTranslucentStatus">false</item>
         <item name="android:fontFamily">@font/saira_medium</item>
         <item name="android:textViewStyle">@style/AppTheme</item>
         <item name="android:textColor">@color/textprimary</item>
@@ -50,11 +57,15 @@
         <item name="thumbTint">@color/colorAccent</item>
         <item name="trackTint">@color/colorPrimaryDark</item>
         <item name="colorControlActivated">@color/colorControlNormal</item>
+        <item name="android:statusBarColor">@color/backgroundviolent</item>
+        <item name="android:navigationBarColor">@color/backgroundviolent</item>
     </style>
 
     <style name="BottomSheetAnimation">
         <item name="android:windowEnterAnimation">@anim/slide_up</item>
         <item name="android:windowExitAnimation">@anim/slide_down</item>
+        <item name="android:statusBarColor">@color/backgroundviolent</item>
+        <item name="android:navigationBarColor">@color/backgroundviolent</item>
     </style>
 
 </resources>

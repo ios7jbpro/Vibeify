@@ -26,6 +26,8 @@ import android.widget.TextView;
 import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.datastore.preferences.core.Preferences;
 import androidx.datastore.preferences.rxjava3.RxPreferenceDataStoreBuilder;
 import androidx.datastore.rxjava3.RxDataStore;
@@ -50,8 +52,14 @@ import java.text.*;
 import java.util.*;
 import java.util.regex.*;
 import org.json.*;
+import androidx.core.view.WindowCompat;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
 
 import com.google.android.material.navigation.NavigationView;
+import com.ios7.wallify.MyClasses.EzTimer;
 import com.ios7.wallify.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -105,6 +113,22 @@ public class MainActivity extends AppCompatActivity {
 
 
 	private void initialize(Bundle _savedInstanceState) {
+
+	View root = findViewById(android.R.id.content);
+
+		ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+			Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+			v.setPadding(0, systemBars.top, 0, 0);
+			return insets;
+		});
+
+		/* EzTimer.runWithDelay(2000, () -> {
+			getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.backgroundviolent));
+			Log.d("StatusBarDebug", "Set status bar color to backgroundviolent in onResume");
+		}); */
+
+
+
 		linear1 = findViewById(R.id.linear1);
 		viewpager1 = findViewById(R.id.viewpager1);
 		bottombarroot = findViewById(R.id.bottombarroot);
@@ -265,7 +289,7 @@ public class MainActivity extends AppCompatActivity {
 			// Nothing
 		}
 		// This part sets the user statusbar color as same as the color pulled from the XMLs
-		switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+		/* switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
 			case Configuration.UI_MODE_NIGHT_YES:
 
 				break;
@@ -273,7 +297,7 @@ public class MainActivity extends AppCompatActivity {
 				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 				getWindow().setStatusBarColor(0xFFFFFFFF);
 				break;
-		}
+		} */
 		pageLoaderInit.setTabCount(2);
 		viewpager1.setAdapter(pageLoaderInit);
 		ViewPager viewPager = findViewById(R.id.viewpager1);
@@ -402,6 +426,7 @@ public class MainActivity extends AppCompatActivity {
 // finally change the color
 		window.setStatusBarColor(ContextCompat.getColor(this,R.color.backgroundviolent));
 		viewpager1.setClipToOutline(true);
+		WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
 	}
 
 	public class PageLoaderInitFragmentAdapter extends FragmentStatePagerAdapter {
