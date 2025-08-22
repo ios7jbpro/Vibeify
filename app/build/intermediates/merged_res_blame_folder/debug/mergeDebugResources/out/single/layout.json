@@ -1,82 +1,94 @@
 [
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\settings_dialog_fragment.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\settings_dialog_fragment.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_app_abandoned.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_app_abandoned.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\warning_dialog.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\warning_dialog.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/wallpaperlist.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/wallpaperlist.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\categorylist.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\categorylist.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/warning_dialog.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/warning_dialog.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\abandon_dialog.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\abandon_dialog.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/devs.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/devs.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_no_internet.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_no_internet.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_app_restarter.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_app_restarter.xml"
     },
     {
-        "merged": "com.ios7.wallify.app-mergeDebugResources-80:/layout/main.xml",
-        "source": "com.ios7.wallify.app-main-83:/layout/main.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/main.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/main.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_app_restarter.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_app_restarter.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/setwall1.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/setwall1.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\wallpaperlist.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\wallpaperlist.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_new_main.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_new_main.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_setup1.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_setup1.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_setup1.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_setup1.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\devs.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\devs.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/settings_dialog_fragment.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/settings_dialog_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_crop_wallpaper.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_crop_wallpaper.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/fragment_dashboard.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/fragment_dashboard.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\setwall1.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\setwall1.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_crop_wallpaper.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_crop_wallpaper.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_share_image_loader.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_share_image_loader.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_manual_debug_enabler.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_manual_debug_enabler.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\wallpapers_fragment.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\wallpapers_fragment.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/fragment_home.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/fragment_home.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\setwall2.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\setwall2.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/walldownload.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/walldownload.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\walldownload.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\walldownload.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/categorylist.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/categorylist.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_manual_debug_enabler.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_manual_debug_enabler.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/setwall2.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/setwall2.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\main.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\main.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/fragment_notifications.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/fragment_notifications.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\walldownloadkotlin.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\walldownloadkotlin.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/walldownloadkotlin.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/walldownloadkotlin.xml"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-mergeDebugResources-80:\\layout\\activity_app_abandoned.xml",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.9\\com.ios7.wallify.app-main-83:\\layout\\activity_app_abandoned.xml"
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_no_internet.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_no_internet.xml"
+    },
+    {
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/abandon_dialog.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/abandon_dialog.xml"
+    },
+    {
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/activity_share_image_loader.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/activity_share_image_loader.xml"
+    },
+    {
+        "merged": "com.ios7.wallify.app-mergeDebugResources-81:/layout/wallpapers_fragment.xml",
+        "source": "com.ios7.wallify.app-main-84:/layout/wallpapers_fragment.xml"
     }
 ]

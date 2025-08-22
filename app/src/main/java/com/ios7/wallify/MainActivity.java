@@ -16,6 +16,7 @@ import android.text.style.*;
 import android.util.*;
 import android.view.*;
 import android.view.View;
+import android.view.Window; // Added import for Window
 import android.view.View.*;
 import android.view.animation.*;
 import android.webkit.*;
@@ -54,9 +55,6 @@ import java.util.regex.*;
 import org.json.*;
 import androidx.core.view.WindowCompat;
 import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-
 
 import com.google.android.material.navigation.NavigationView;
 import com.ios7.wallify.MyClasses.EzTimer;
@@ -83,7 +81,13 @@ public class MainActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
 		super.onCreate(_savedInstanceState);
+		// WindowCompat.setDecorFitsSystemWindows(getWindow(), false);
 		setContentView(R.layout.main);
+
+		Window window = getWindow();
+		window.setStatusBarColor(ContextCompat.getColor(this, R.color.backgroundviolent));
+		window.setNavigationBarColor(ContextCompat.getColor(this, R.color.backgroundviolent));
+
 		initialize(_savedInstanceState);
 		initializeLogic();
 		// checkInternetOrCrash();
@@ -118,15 +122,9 @@ public class MainActivity extends AppCompatActivity {
 
 		ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
 			Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-			v.setPadding(0, systemBars.top, 0, 0);
-			return insets;
+			v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+			return WindowInsetsCompat.CONSUMED; 
 		});
-
-		/* EzTimer.runWithDelay(2000, () -> {
-			getWindow().setStatusBarColor(ContextCompat.getColor(this, R.color.backgroundviolent));
-			Log.d("StatusBarDebug", "Set status bar color to backgroundviolent in onResume");
-		}); */
-
 
 
 		linear1 = findViewById(R.id.linear1);
@@ -135,14 +133,11 @@ public class MainActivity extends AppCompatActivity {
 		linear2 = findViewById(R.id.linear2);
 		textview1 = findViewById(R.id.textview1);
 		linear4 = findViewById(R.id.linear4);
-		// tab1bg = findViewById(R.id.tab1bg);
-		// tab1bg.setBackgroundResource(R.drawable.activetab);
 		 button1 = findViewById(R.id.button1);
 		 button2 = findViewById(R.id.button2);
 		 linear4.setVisibility(View.GONE);
 		 try {
 			 bottom_nav = findViewById(R.id.bottomnav1);
-			 // We do this part to force the code to do some action and fail on tablets, so we can know it's a tablet
 			 bottom_nav.setVisibility(View.GONE);
 			 bottom_nav.setVisibility(View.VISIBLE);
 			 navDetector = "1";
@@ -151,7 +146,6 @@ public class MainActivity extends AppCompatActivity {
 				 Log.d("DEBUG", "Bottom nav not found, possible a large screen device?");
 				 Log.d("DEBUG", "Trying the tablet oriented navview1");
 				 navview1 = findViewById(R.id.navview1);
-				 // We do this part to force the code to do some action and fail on tablets, so we can know it's some screen size that doesnt have a layout
 				 navview1.setVisibility(View.GONE);
 				 navview1.setVisibility(View.VISIBLE);
 				 navDetector = "2";
@@ -165,8 +159,7 @@ public class MainActivity extends AppCompatActivity {
 		 button2.setBackgroundResource(R.drawable.roundedbgviolent);
 		pageLoaderInit = new PageLoaderInitFragmentAdapter(getApplicationContext(), getSupportFragmentManager());
 		config = getSharedPreferences("config", Activity.MODE_PRIVATE);
-		// startActivity(new Intent(MainActivity.this, AppAbandoned.class));
-		// finish();
+
 
 			button1.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -183,23 +176,19 @@ public class MainActivity extends AppCompatActivity {
 		 	});
 		 }
 
-		 // Handle back button press
 		 @Override
 		 public void onBackPressed() {
 			 config.edit().putString("backSignal", "1").commit();
 
-			 // Check if we are on tab 1
 			 if (config.getString("currenttab", "").equals("1")) {
-				 // Delay the viewpager switch to tab 0
 				 new Handler().postDelayed(new Runnable() {
 					 @Override
 					 public void run() {
-						 viewpager1.setCurrentItem(0);  // Set to the first tab with a delay
+						 viewpager1.setCurrentItem(0);  
 					 }
-				 }, 150); // Delay of 75ms to allow fragment to handle back press
+				 }, 150); 
 
 			 } else {
-				 // Normal back press behavior
 				 if (config.getString("fragmentCanExit", "").equals("0")) {
 					 // Do nothing
 				 } else {
@@ -211,13 +200,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 	private void initializeLogic() {
-		// This SharedPrefs section sets your desired repo.
 		config.edit().putString("repo", "https://ihs.ios7.xyz/wallify-api/categories.json").commit();
 		config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").commit();
-		// Enable or disable categories
 		config.edit().putString("categories", "1").commit();
 		config.edit().putString("directrepo", "https://altdisk.eimaen.pw/api/download/a69b5e5031f23e06cd1af7f885de5c0c/anime.json").commit();
-		// Changes the default timeout.
 		if (config.getString("timeout", "").equals("")) {
 			config.edit().putString("timeout", "5000").commit();
 		}
@@ -228,11 +214,6 @@ public class MainActivity extends AppCompatActivity {
 			Log.d("DEBUG", "Launching setup activity");
 			startActivity(new Intent(MainActivity.this, SetupActivity1.class));
 		}
-		// Disables color extraction.
-		// ^^ This is no longer required as we added an exception catch to the extraction logic, the app won't fail anymore even if it fails.
-		// So now we enable it by default.
-		// nvm, we fucked up, disabled it.
-		// FINALLY IT WORKS!
 		if (config.getString("colorextraction", "").equals("")) {
 			config.edit().putString("colorextraction", "1").commit();
 		}
@@ -244,7 +225,6 @@ public class MainActivity extends AppCompatActivity {
 		}
 
 
-		// Check for debuuger/debug build
 		if (config.getString("forcedDebug", "").equals("1")) {
 			config.edit().putString("debugMode", "1").commit();
 		} else {
@@ -265,14 +245,11 @@ public class MainActivity extends AppCompatActivity {
 			config.edit().putString("debugMode", "0").commit();
 		}
 
-		// Deprecation. Forces default values.
 		config.edit().putString("debugMode", "0").commit();
 		config.edit().putString("disableanims", "0").commit();
 		config.edit().putString("disableblur", "0").commit();
 		config.edit().putString("colorextraction", "1").commit();
 		textview1.setText(R.string.app_name);
-		// These options are now also hidden in settings.
-
 
 
 
@@ -280,7 +257,7 @@ public class MainActivity extends AppCompatActivity {
 		Log.d("MANDEBUG", "DebugMode state:"+config.getString("debugMode", ""));
 
 		if (config.getString("disableblur", "").equals("")) {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { // API 31+
+			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { 
 				config.edit().putString("disableblur", "0").commit();
 			} else {
 				config.edit().putString("disableblur", "1").commit();
@@ -288,32 +265,17 @@ public class MainActivity extends AppCompatActivity {
 		} else {
 			// Nothing
 		}
-		// This part sets the user statusbar color as same as the color pulled from the XMLs
-		/* switch (getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
-			case Configuration.UI_MODE_NIGHT_YES:
-
-				break;
-			case Configuration.UI_MODE_NIGHT_NO:
-				getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
-				getWindow().setStatusBarColor(0xFFFFFFFF);
-				break;
-		} */
 		pageLoaderInit.setTabCount(2);
 		viewpager1.setAdapter(pageLoaderInit);
 		ViewPager viewPager = findViewById(R.id.viewpager1);
 		viewPager.addOnPageChangeListener(new OnPageChangeListener() {
 			@Override
 			public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-				// You can implement your code here if you want to do something when the page is scrolled
 			}
 
 			@Override
 			public void onPageSelected(int position) {
-				// This method is called when a new page is selected
-				// 'position' is the index of the newly selected page
-				// Toast.makeText(MainActivity.this, "page:" + position, Toast.LENGTH_SHORT).show();
 				if (position == 0) {
-					// tab1bg.setBackgroundResource(R.drawable.activetab);
 					button1.setBackgroundResource(R.drawable.activetab);
 					button2.setBackgroundResource(R.drawable.roundedbgviolent);
 					config.edit().putString("currenttab", "0").commit();
@@ -325,7 +287,6 @@ public class MainActivity extends AppCompatActivity {
 					}
 				}
 				if (position == 1) {
-					// tab1bg.setBackgroundResource(R.drawable.roundedbgviolent);
 					button2.setBackgroundResource(R.drawable.activetab);
 					button1.setBackgroundResource(R.drawable.roundedbgviolent);
 					config.edit().putString("currenttab", "1").commit();
@@ -345,25 +306,9 @@ public class MainActivity extends AppCompatActivity {
 			}
 		});
 
-		if (navDetector == "1") {
+		if (navDetector.equals("1")) { 
 			linear4.setVisibility(View.GONE);
 
-			/*bottom_nav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-				@Override
-				public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-					int id = item.getItemId();
-					if (id == R.id.page_1) {
-						viewpager1.setCurrentItem((int) 0);
-						return true;
-					} else if (id == R.id.page_2) {
-						viewpager1.setCurrentItem((int) 1);
-						return true;
-					} else {
-						return false;
-					}
-				}
-			});*/
-			// Migrate to modern material3 navigationbar
 			bottom_nav.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
 				@Override
 				public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -384,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
 			bottom_nav.setItemActiveIndicatorColor(colorStateList);
 
 
-		} else if (navDetector == "2") {
+		} else if (navDetector.equals("2")) { 
 			linear4.setVisibility(View.GONE);
 			navview1.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
 				@Override
@@ -403,7 +348,6 @@ public class MainActivity extends AppCompatActivity {
 		} else {
 			{
 				try {
-
 				} catch (Exception e) {
 					Log.d("DEBUG", "Bottom nav not found, possible a large screen device?");
 					Log.d("DEBUG", "Defaulting to the old bottom navigation view and disabling all the new code");
@@ -415,23 +359,20 @@ public class MainActivity extends AppCompatActivity {
 		Log.d("DEBUG", "NavView current style is" + navDetector);
 
 
-		Window window = getWindow();
+		// Window window = getWindow();
 
-// clear FLAG_TRANSLUCENT_STATUS flag:
-		window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+		// clear FLAG_TRANSLUCENT_STATUS flag:
+		// window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
-		window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+		// add FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS flag to the window
+		// window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
 
-// finally change the color
-		window.setStatusBarColor(ContextCompat.getColor(this,R.color.backgroundviolent));
+		// finally change the color
+		// window.setStatusBarColor(ContextCompat.getColor(this,R.color.backgroundviolent));
 		viewpager1.setClipToOutline(true);
-		WindowCompat.setDecorFitsSystemWindows(getWindow(), true);
 	}
 
 	public class PageLoaderInitFragmentAdapter extends FragmentStatePagerAdapter {
-		// This class is deprecated, you should migrate to ViewPager2:
-		// https://developer.android.com/reference/androidx/viewpager2/widget/ViewPager2
 		Context context;
 		int tabCount;
 

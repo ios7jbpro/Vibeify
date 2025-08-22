@@ -2620,6 +2620,8 @@ dimen abc_text_size_subhead_material
 dimen abc_text_size_subtitle_material_toolbar
 dimen abc_text_size_title_material
 dimen abc_text_size_title_material_toolbar
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
@@ -3701,9 +3703,11 @@ drawable ic_call_decline
 drawable ic_call_decline_low
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
+drawable ic_dashboard_black_24dp
 drawable ic_expand_less_22px
 drawable ic_expand_more_22px
 drawable ic_flip_24
+drawable ic_home_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_m3_chip_check
 drawable ic_m3_chip_checked_circle
@@ -3713,6 +3717,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_notifications_black_24dp
 drawable ic_rotate_left_24
 drawable ic_rotate_right_24
 drawable ic_search_black_24
@@ -4221,6 +4226,7 @@ id menu
 id message
 id middle
 id mini
+id mobile_navigation
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -4264,8 +4270,11 @@ id navigation_bar_item_inner_content_container
 id navigation_bar_item_labels_group
 id navigation_bar_item_large_label_view
 id navigation_bar_item_small_label_view
+id navigation_dashboard
 id navigation_header_container
+id navigation_home
 id navigation_menu_subheader_label
+id navigation_notifications
 id navview1
 id never
 id neverCompleteToEnd
@@ -4779,12 +4788,14 @@ layout walldownloadkotlin
 layout wallpaperlist
 layout wallpapers_fragment
 layout warning_dialog
+menu bottom_nav_menu
 menu bottomnav
 menu crop_image_menu
 mipmap ic_launcher
 mipmap ic_launcher_background
 mipmap ic_launcher_foreground
 mipmap ic_launcher_monochrome
+navigation mobile_navigation
 plurals mtrl_badge_content_description
 string ColorExtractionFailed
 string Credits
@@ -5076,6 +5087,10 @@ string tab
 string template_percent
 string title_activity_abandon_dialog
 string title_activity_crop_wallpaper
+string title_activity_new_main
+string title_dashboard
+string title_home
+string title_notifications
 string tooltip_description
 string tooltip_label
 style AlertDialog_AppCompat

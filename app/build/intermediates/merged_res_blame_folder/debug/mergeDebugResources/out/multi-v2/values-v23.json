@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.ios7.wallify.app-mergeDebugResources-79:/values-v23/values-v23.xml",
+            "outputFile": "com.ios7.wallify.app-mergeDebugResources-80:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\baris\\.gradle\\caches\\8.9\\transforms\\1da862c836ed03b0f475d99b4ed6ef9e\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/ios7/.gradle/caches/8.9/transforms/1da862c836ed03b0f475d99b4ed6ef9e/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\baris\\.gradle\\caches\\8.9\\transforms\\59d7f2b0b958a142a5695ae8fadbaa22\\transformed\\material-1.14.0-alpha03\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/ios7/.gradle/caches/8.9/transforms/59d7f2b0b958a142a5695ae8fadbaa22/transformed/material-1.14.0-alpha03/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -42,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\baris\\.gradle\\caches\\8.9\\transforms\\f52ee1f8005bee6fc35c97b7506200cc\\transformed\\appcompat-1.7.0\\res\\values-v23\\values-v23.xml",
+                    "source": "/home/ios7/.gradle/caches/8.9/transforms/f52ee1f8005bee6fc35c97b7506200cc/transformed/appcompat-1.7.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

@@ -19,6 +19,8 @@ color switch_tint
 color textactivetab
 color textprimary
 color titletextcolor
+dimen activity_horizontal_margin
+dimen activity_vertical_margin
 drawable activetab
 drawable chatpfp
 drawable default_image
@@ -31,6 +33,9 @@ drawable heeh_3
 drawable hk_personal_wallpaper
 drawable ic_apps_white
 drawable ic_arrow_back_white
+drawable ic_dashboard_black_24dp
+drawable ic_home_black_24dp
+drawable ic_notifications_black_24dp
 drawable inactivetab
 drawable java
 drawable jhgg_1
@@ -163,6 +168,10 @@ id listview1
 id main
 id mainEditingPage
 id mainframe
+id mobile_navigation
+id navigation_dashboard
+id navigation_home
+id navigation_notifications
 id navview1
 id nextButton
 id nextbutton1
@@ -256,11 +265,13 @@ layout walldownloadkotlin
 layout wallpaperlist
 layout wallpapers_fragment
 layout warning_dialog
+menu bottom_nav_menu
 menu bottomnav
 mipmap ic_launcher
 mipmap ic_launcher_background
 mipmap ic_launcher_foreground
 mipmap ic_launcher_monochrome
+navigation mobile_navigation
 string ColorExtractionFailed
 string Credits
 string CropWall
@@ -285,6 +296,10 @@ string previous
 string second_fragment_label
 string title_activity_abandon_dialog
 string title_activity_crop_wallpaper
+string title_activity_new_main
+string title_dashboard
+string title_home
+string title_notifications
 style AppTheme
 style AppTheme.AppBarOverlay
 style AppTheme.FullScreen

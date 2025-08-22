@@ -2619,6 +2619,8 @@ int dimen abc_text_size_subhead_material 0x7f06004d
 int dimen abc_text_size_subtitle_material_toolbar 0x7f06004e
 int dimen abc_text_size_title_material 0x7f06004f
 int dimen abc_text_size_title_material_toolbar 0x7f060050
+int dimen activity_horizontal_margin 0x7f060416
+int dimen activity_vertical_margin 0x7f060417
 int dimen appcompat_dialog_background_inset 0x7f060051
 int dimen cardview_compat_inset_shadow 0x7f060052
 int dimen cardview_default_elevation 0x7f060053
@@ -3700,9 +3702,11 @@ int drawable ic_call_decline 0x7f070098
 int drawable ic_call_decline_low 0x7f070099
 int drawable ic_clear_black_24 0x7f07009a
 int drawable ic_clock_black_24dp 0x7f07009b
+int drawable ic_dashboard_black_24dp 0x7f07010d
 int drawable ic_expand_less_22px 0x7f07009c
 int drawable ic_expand_more_22px 0x7f07009d
 int drawable ic_flip_24 0x7f07009e
+int drawable ic_home_black_24dp 0x7f07010e
 int drawable ic_keyboard_black_24dp 0x7f07009f
 int drawable ic_m3_chip_check 0x7f0700a0
 int drawable ic_m3_chip_checked_circle 0x7f0700a1
@@ -3712,6 +3716,7 @@ int drawable ic_mtrl_checked_circle 0x7f0700a4
 int drawable ic_mtrl_chip_checked_black 0x7f0700a5
 int drawable ic_mtrl_chip_checked_circle 0x7f0700a6
 int drawable ic_mtrl_chip_close_circle 0x7f0700a7
+int drawable ic_notifications_black_24dp 0x7f07010f
 int drawable ic_rotate_left_24 0x7f0700a8
 int drawable ic_rotate_right_24 0x7f0700a9
 int drawable ic_search_black_24 0x7f0700aa
@@ -4220,6 +4225,7 @@ int id menu 0x7f090192
 int id message 0x7f090193
 int id middle 0x7f090194
 int id mini 0x7f090195
+int id mobile_navigation 0x7f0902e2
 int id month_grid 0x7f090196
 int id month_navigation_bar 0x7f090197
 int id month_navigation_fragment_toggle 0x7f090198
@@ -4263,8 +4269,11 @@ int id navigation_bar_item_inner_content_container 0x7f0901bd
 int id navigation_bar_item_labels_group 0x7f0901be
 int id navigation_bar_item_large_label_view 0x7f0901bf
 int id navigation_bar_item_small_label_view 0x7f0901c0
+int id navigation_dashboard 0x7f0902e5
 int id navigation_header_container 0x7f0901c1
+int id navigation_home 0x7f0902e6
 int id navigation_menu_subheader_label 0x7f0901c2
+int id navigation_notifications 0x7f0902e7
 int id navview1 0x7f0901c3
 int id never 0x7f0901c4
 int id neverCompleteToEnd 0x7f0901c5
@@ -4778,12 +4787,14 @@ int layout walldownloadkotlin 0x7f0c0082
 int layout wallpaperlist 0x7f0c0083
 int layout wallpapers_fragment 0x7f0c0084
 int layout warning_dialog 0x7f0c0085
+int menu bottom_nav_menu 0x7f0e0002
 int menu bottomnav 0x7f0e0000
 int menu crop_image_menu 0x7f0e0001
 int mipmap ic_launcher 0x7f0f0000
 int mipmap ic_launcher_background 0x7f0f0001
 int mipmap ic_launcher_foreground 0x7f0f0002
 int mipmap ic_launcher_monochrome 0x7f0f0003
+int navigation mobile_navigation 0x7f150000
 int plurals mtrl_badge_content_description 0x7f100000
 int string ColorExtractionFailed 0x7f110000
 int string Credits 0x7f110001
@@ -5075,6 +5086,10 @@ int string tab 0x7f11011e
 int string template_percent 0x7f11011f
 int string title_activity_abandon_dialog 0x7f110120
 int string title_activity_crop_wallpaper 0x7f110121
+int string title_activity_new_main 0x7f110124
+int string title_dashboard 0x7f110125
+int string title_home 0x7f110126
+int string title_notifications 0x7f110127
 int string tooltip_description 0x7f110122
 int string tooltip_label 0x7f110123
 int style AlertDialog_AppCompat 0x7f120000

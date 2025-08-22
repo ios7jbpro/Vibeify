@@ -25,4 +25,8 @@
     <string name="CropWall">Crop</string>
     <string name="ShareURL">Share(URL)</string>
     <string name="ShareIMAGE">Share(Image)</string>
+    <string name="title_activity_new_main">NewMainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 </resources>
