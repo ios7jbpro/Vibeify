@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ios7.wallify"
+    package="com.ios7.vibeify"
     android:versionCode="1"
     android:versionName="1.5.4-tabfix" >
 
@@ -29,10 +29,10 @@
     </queries>
 
     <permission
-        android:name="com.ios7.wallify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:name="com.ios7.vibeify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="com.ios7.wallify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <uses-permission android:name="com.ios7.vibeify.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 
     <application
         android:allowBackup="true"
@@ -46,47 +46,46 @@
         android:resizeableActivity="true"
         android:screenOrientation="unspecified"
         android:supportsPictureInPicture="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Material3BottomNav"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="com.ios7.wallify.NoInternet"
+            android:name="com.ios7.vibeify.NoInternet"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.AppRestarter"
+            android:name="com.ios7.vibeify.AppRestarter"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.ManualDebugEnabler"
+            android:name="com.ios7.vibeify.ManualDebugEnabler"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.ShareImageLoader"
+            android:name="com.ios7.vibeify.ShareImageLoader"
             android:exported="false"
             android:theme="@style/BottomSheetActivity" />
         <activity
-            android:name="com.ios7.wallify.WalldownloadkotlinActivity"
+            android:name="com.ios7.vibeify.WalldownloadkotlinActivity"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.WallDownloadKotlin"
+            android:name="com.ios7.vibeify.WallDownloadKotlin"
             android:exported="false"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.ios7.wallify.AppAbandoned"
+            android:name="com.ios7.vibeify.AppAbandoned"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.SetupActivity1"
+            android:name="com.ios7.vibeify.SetupActivity1"
             android:exported="false" />
         <activity
-            android:name="com.ios7.wallify.abandon_dialog"
+            android:name="com.ios7.vibeify.abandon_dialog"
             android:exported="false"
             android:label="@string/title_activity_abandon_dialog"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.ios7.wallify.CropWallpaper"
+            android:name="com.ios7.vibeify.CropWallpaper"
             android:exported="false"
             android:label="@string/title_activity_crop_wallpaper"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="com.ios7.wallify.MainActivity"
+            android:name="com.ios7.vibeify.MainActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:exported="true"
             android:hardwareAccelerated="true"
@@ -101,7 +100,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.ios7.wallify.WalldownloadActivity"
+            android:name="com.ios7.vibeify.WalldownloadActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:resizeableActivity="true"
@@ -109,14 +108,14 @@
             android:supportsPictureInPicture="true"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.ios7.wallify.Setwall1Activity"
+            android:name="com.ios7.vibeify.Setwall1Activity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:supportsPictureInPicture="true"
             android:theme="@style/AppTheme.FullScreen"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name="com.ios7.wallify.Setwall2Activity"
+            android:name="com.ios7.vibeify.Setwall2Activity"
             android:configChanges="orientation|screenSize|keyboardHidden|smallestScreenSize|screenLayout"
             android:hardwareAccelerated="true"
             android:supportsPictureInPicture="true"
@@ -125,7 +124,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.ios7.wallify.androidx-startup"
+            android:authorities="com.ios7.vibeify.androidx-startup"
             android:exported="false" >
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
@@ -139,7 +138,7 @@
         </provider>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.ios7.wallify.fileprovider"
+            android:authorities="com.ios7.vibeify.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -153,7 +152,7 @@
 
         <provider
             android:name="com.canhub.cropper.CropFileProvider"
-            android:authorities="com.ios7.wallify.cropper.fileprovider"
+            android:authorities="com.ios7.vibeify.cropper.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true" >
             <meta-data
@@ -180,7 +179,7 @@
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.ios7.wallify.com.squareup.picasso"
+            android:authorities="com.ios7.vibeify.com.squareup.picasso"
             android:exported="false" />
 
         <receiver

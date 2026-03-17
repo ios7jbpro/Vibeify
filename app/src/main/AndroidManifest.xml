@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ios7.wallify">
+    package="com.ios7.vibeify">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -97,7 +97,7 @@
 
         <provider
             android:name="androidx.startup.InitializationProvider"
-            android:authorities="com.ios7.wallify.androidx-startup"
+            android:authorities="com.ios7.vibeify.androidx-startup"
             android:exported="false">
             <meta-data
                 android:name="androidx.lifecycle.ProcessLifecycleInitializer"
@@ -108,7 +108,7 @@
         </provider>
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.ios7.wallify.fileprovider"
+            android:authorities="com.ios7.vibeify.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -10,8 +10,8 @@ android {
 	useLibrary 'org.apache.http.legacy'
 	
 	defaultConfig {
-		applicationId "com.ios7.wallify"
-		namespace "com.ios7.wallify"
+		applicationId "com.ios7.vibeify"
+		namespace "com.ios7.vibeify"
 		minSdkVersion 27
 		targetSdkVersion 35
 		versionCode 1

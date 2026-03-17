@@ -14,7 +14,7 @@
     <item name="android:textColor">@color/textprimary</item>
     <item name="android:windowSplashScreenBackground">@color/background</item>
     <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-    <item name="android:windowBackground">@color/background</item>
+    <item name="android:windowBackground">@color/backgroundviolent</item>
     <item name="android:statusBarColor">@color/backgroundviolent</item>
     <item name="android:navigationBarColor">@color/backgroundviolent</item>
 </style>
@@ -51,7 +51,7 @@
         <item name="android:textColor">@color/textprimary</item>
         <item name="android:windowSplashScreenBackground">@color/background</item>
         <item name="android:windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
-        <item name="android:windowBackground">@color/background</item>
+        <item name="android:windowBackground">@color/backgroundviolent</item>
     </style>
     <style name="M3Switch" parent="Widget.Material3.CompoundButton.MaterialSwitch">
         <item name="thumbTint">@color/colorAccent</item>

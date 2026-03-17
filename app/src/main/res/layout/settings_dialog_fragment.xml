@@ -74,7 +74,7 @@
 								android:paddingEnd="6dp"
 								android:paddingRight="6dp"
 								android:paddingBottom="1dp"
-								android:text="Wallify"
+								android:text="Vibeify"
 								android:textColor="@color/textprimary"
 								android:textSize="30sp"
 								android:textStyle="bold" />
@@ -134,7 +134,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:padding="8dp"
-						android:text="⚠️ This project is bound to deprecate, click to read more."
+						android:text="🤖 This app is now updated by an LLM only. Click to read more."
 						android:textColor="@color/textprimary"
 						android:textSize="14sp" />
 				</LinearLayout>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <resources>
     <string name="header" translatable="false">Hhhhh</string>
-    <string name="app_name" translatable="false">Wallify</string>
+    <string name="app_name" translatable="false">Vibeify</string>
     <string name="WallpaperTab">Wallpapers</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
