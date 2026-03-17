@@ -496,7 +496,7 @@ public class SettingsDialogFragmentActivity extends DialogFragment {
 		@Override
 		protected String doInBackground(Void... voids) {
 			try {
-				URL url = new URL("https://api.github.com/repos/ios7jbpro/wallify/commits/main");
+				URL url = new URL("https://api.github.com/repos/ios7jbpro/Vibeify/commits/main");
 				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 				connection.setRequestProperty("User-Agent", "Vibeify-App"); // GitHub requires this
 				connection.connect();
