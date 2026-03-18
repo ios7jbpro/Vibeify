@@ -179,6 +179,7 @@ id nextbutton2
 id nextbutton3
 id page_1
 id page_2
+id page_3
 id pfpClipper
 id pfpClipper3
 id previewStatusBar
@@ -198,10 +199,13 @@ id rootlinear
 id setWallpaperButton
 id setupGui
 id skipbutton
+id status_list
 id switchColorPreviews
 id switchDisableAnims
 id switchDisableBlur
 id tempcardview
+id textName
+id textStatus
 id textView
 id textView10
 id textView11
@@ -256,6 +260,8 @@ layout activity_setup1
 layout activity_share_image_loader
 layout categorylist
 layout devs
+layout fragment_conversion_status
+layout item_conversion_status
 layout main
 layout settings_dialog_fragment
 layout setwall1
@@ -267,6 +273,7 @@ layout wallpapers_fragment
 layout warning_dialog
 menu bottom_nav_menu
 menu bottomnav
+menu bottomnav_java
 mipmap ic_launcher
 mipmap ic_launcher_background
 mipmap ic_launcher_foreground
@@ -285,6 +292,7 @@ string SetWall
 string SettingsTab
 string ShareIMAGE
 string ShareURL
+string StatusTab
 string WallColors
 string WallPreview
 string WallpaperTab

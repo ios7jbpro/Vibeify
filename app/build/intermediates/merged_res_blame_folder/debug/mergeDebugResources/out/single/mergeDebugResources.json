@@ -4,6 +4,10 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable-xhdpi\\hk_personal_wallpaper.png"
     },
     {
+        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\layout_fragment_conversion_status.xml.flat",
+        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\fragment_conversion_status.xml"
+    },
+    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_fade.xml.flat",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable\\fade.xml"
     },
@@ -158,6 +162,10 @@
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_roundedbginfocard.xml.flat",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable\\roundedbginfocard.xml"
+    },
+    {
+        "merged": "com.ios7.vibeify.app-debug-82:/menu_bottomnav_java.xml.flat",
+        "source": "com.ios7.vibeify.app-main-84:/menu/bottomnav_java.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\layout_wallpapers_fragment.xml.flat",
@@ -324,10 +332,6 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.ios7.vibeify.app-debug-82:/layout_activity_setup1.xml.flat",
-        "source": "com.ios7.vibeify.app-main-84:/layout/activity_setup1.xml"
-    },
-    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_roundedbgviolent.xml.flat",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable\\roundedbgviolent.xml"
     },
@@ -350,5 +354,9 @@
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable-xhdpi_kotlin.png.flat",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable-xhdpi\\kotlin.png"
+    },
+    {
+        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\layout_item_conversion_status.xml.flat",
+        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\item_conversion_status.xml"
     }
 ]

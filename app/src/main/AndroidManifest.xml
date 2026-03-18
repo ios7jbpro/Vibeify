@@ -28,6 +28,9 @@
             android:name=".AppRestarter"
             android:exported="false" />
         <activity
+            android:name=".AppRestarterKotlin"
+            android:exported="false" />
+        <activity
             android:name=".ManualDebugEnabler"
             android:exported="false" />
         <activity

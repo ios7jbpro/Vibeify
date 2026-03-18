@@ -8,6 +8,10 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\setwall2.xml"
     },
     {
+        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\fragment_conversion_status.xml",
+        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\fragment_conversion_status.xml"
+    },
+    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\devs.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\devs.xml"
     },
@@ -32,10 +36,6 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\abandon_dialog.xml"
     },
     {
-        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/activity_setup1.xml",
-        "source": "com.ios7.vibeify.app-main-84:/layout/activity_setup1.xml"
-    },
-    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\wallpapers_fragment.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\wallpapers_fragment.xml"
     },
@@ -46,6 +46,10 @@
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\walldownloadkotlin.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\walldownloadkotlin.xml"
+    },
+    {
+        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/fragment_conversion_status.xml",
+        "source": "com.ios7.vibeify.app-main-84:/layout/fragment_conversion_status.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\warning_dialog.xml",
@@ -70,6 +74,10 @@
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\activity_app_restarter.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\activity_app_restarter.xml"
+    },
+    {
+        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/item_conversion_status.xml",
+        "source": "com.ios7.vibeify.app-main-84:/layout/item_conversion_status.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\activity_share_image_loader.xml",

@@ -208,7 +208,7 @@ public class SettingsDialogFragmentActivity extends DialogFragment {
 			public void onClick(View view) {
 				Log.d("RESTART", "Restarting app");
 				Intent intent = new Intent();
-				intent.setClass(getActivity(), AppRestarter.class);
+				intent.setClass(getActivity(), AppRestarterKotlin.class);
 				startActivity(intent);
 				Log.d("MANDEBUG", "Exiting the app");
 				getActivity().finish();

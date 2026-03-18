@@ -149,6 +149,8 @@ public class MainActivity extends AppCompatActivity {
 		 linear4.setVisibility(View.GONE);
 		 try {
 			 bottom_nav = findViewById(R.id.bottomnav1);
+			 bottom_nav.getMenu().clear();
+			 bottom_nav.inflateMenu(R.menu.bottomnav_java);
 			 bottom_nav.setVisibility(View.GONE);
 			 bottom_nav.setVisibility(View.VISIBLE);
 			 navDetector = "1";
@@ -157,6 +159,8 @@ public class MainActivity extends AppCompatActivity {
 				 Log.d("DEBUG", "Bottom nav not found, possible a large screen device?");
 				 Log.d("DEBUG", "Trying the tablet oriented navview1");
 				 navview1 = findViewById(R.id.navview1);
+				 navview1.getMenu().clear();
+				 navview1.inflateMenu(R.menu.bottomnav_java);
 				 navview1.setVisibility(View.GONE);
 				 navview1.setVisibility(View.VISIBLE);
 				 navDetector = "2";

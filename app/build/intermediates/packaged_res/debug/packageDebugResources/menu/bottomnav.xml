@@ -10,4 +10,9 @@
         android:enabled="true"
         android:icon="@drawable/settings_icon"
         android:title="@string/SettingsTab" />
+    <item
+        android:id="@+id/page_3"
+        android:enabled="true"
+        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:title="@string/StatusTab" />
 </menu>

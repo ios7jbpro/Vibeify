@@ -55,6 +55,9 @@
             android:name="com.ios7.vibeify.AppRestarter"
             android:exported="false" />
         <activity
+            android:name="com.ios7.vibeify.AppRestarterKotlin"
+            android:exported="false" />
+        <activity
             android:name="com.ios7.vibeify.ManualDebugEnabler"
             android:exported="false" />
         <activity

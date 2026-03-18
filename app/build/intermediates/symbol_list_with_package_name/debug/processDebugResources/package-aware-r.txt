@@ -4320,6 +4320,7 @@ id overshoot
 id packed
 id page_1
 id page_2
+id page_3
 id parallax
 id parent
 id parentPanel
@@ -4432,6 +4433,7 @@ id startVertical
 id start_center
 id staticLayout
 id staticPostLayout
+id status_list
 id stop
 id stretch
 id submenuarrow
@@ -4460,9 +4462,11 @@ id tempcardview
 id text
 id text2
 id textEnd
+id textName
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textStatus
 id textTop
 id textView
 id textView10
@@ -4710,8 +4714,10 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout devs
+layout fragment_conversion_status
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_conversion_status
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -4790,6 +4796,7 @@ layout wallpapers_fragment
 layout warning_dialog
 menu bottom_nav_menu
 menu bottomnav
+menu bottomnav_java
 menu crop_image_menu
 mipmap ic_launcher
 mipmap ic_launcher_background
@@ -4810,6 +4817,7 @@ string SetWall
 string SettingsTab
 string ShareIMAGE
 string ShareURL
+string StatusTab
 string WallColors
 string WallPreview
 string WallpaperTab
