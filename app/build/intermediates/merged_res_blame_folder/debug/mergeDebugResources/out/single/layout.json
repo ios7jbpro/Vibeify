@@ -4,16 +4,8 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\activity_setup1.xml"
     },
     {
-        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/settings_dialog_fragment.xml",
-        "source": "com.ios7.vibeify.app-main-84:/layout/settings_dialog_fragment.xml"
-    },
-    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\setwall2.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\setwall2.xml"
-    },
-    {
-        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/abandon_dialog.xml",
-        "source": "com.ios7.vibeify.app-main-84:/layout/abandon_dialog.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\devs.xml",
@@ -38,6 +30,10 @@
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\abandon_dialog.xml",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\abandon_dialog.xml"
+    },
+    {
+        "merged": "com.ios7.vibeify.app-mergeDebugResources-81:/layout/activity_setup1.xml",
+        "source": "com.ios7.vibeify.app-main-84:/layout/activity_setup1.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-mergeDebugResources-81:\\layout\\wallpapers_fragment.xml",

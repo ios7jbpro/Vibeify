@@ -220,10 +220,6 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable-xhdpi\\chatpfp.webp"
     },
     {
-        "merged": "com.ios7.vibeify.app-debug-82:/layout_abandon_dialog.xml.flat",
-        "source": "com.ios7.vibeify.app-main-84:/layout/abandon_dialog.xml"
-    },
-    {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\layout_devs.xml.flat",
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\layout\\devs.xml"
     },
@@ -328,12 +324,12 @@
         "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_roundedbgviolent.xml.flat",
-        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable\\roundedbgviolent.xml"
+        "merged": "com.ios7.vibeify.app-debug-82:/layout_activity_setup1.xml.flat",
+        "source": "com.ios7.vibeify.app-main-84:/layout/activity_setup1.xml"
     },
     {
-        "merged": "com.ios7.vibeify.app-debug-82:/layout_settings_dialog_fragment.xml.flat",
-        "source": "com.ios7.vibeify.app-main-84:/layout/settings_dialog_fragment.xml"
+        "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_roundedbgviolent.xml.flat",
+        "source": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-main-84:\\drawable\\roundedbgviolent.xml"
     },
     {
         "merged": "C:\\Users\\baris\\.gradle\\daemon\\8.12.1\\com.ios7.vibeify.app-debug-82:\\drawable_inactivetab.xml.flat",

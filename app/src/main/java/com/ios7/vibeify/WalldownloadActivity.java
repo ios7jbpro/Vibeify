@@ -135,6 +135,7 @@ public class WalldownloadActivity extends AppCompatActivity {
 	private ImageView imageviewprereact;
 	private LinearLayout linearprereact;
 	private boolean isPfp;
+	private AlertDialog loadingDialog;
 	
 	@Override
 	protected void onCreate(Bundle _savedInstanceState) {
@@ -259,29 +260,38 @@ public class WalldownloadActivity extends AppCompatActivity {
 		button2.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View _view) {
+				showLoadingDialog();
 				Glide.with(getApplicationContext())
-						.asBitmap() // Directly load the image as a Bitmap
+						.asBitmap()
 						.load(Uri.parse(config.getString("repo", "") + wallLink.getString("wallLink", "")))
 						.into(new SimpleTarget<Bitmap>() {
 							@Override
 							public void onResourceReady(@NonNull Bitmap resource, @Nullable Transition<? super Bitmap> transition) {
-								WallpaperManager wallManager = WallpaperManager.getInstance(getApplicationContext());
-								try {
-									Toast.makeText(getApplicationContext(), "Loading in high-res and setting wallpaper...", Toast.LENGTH_SHORT).show();
-									wallManager.clear(); // Clear the existing wallpaper
-									wallManager.setBitmap(resource); // Set the loaded Bitmap as wallpaper
-								} catch (IOException ex) {
-									ex.printStackTrace(); // Handle exceptions
-									Toast.makeText(getApplicationContext(),  "Failed to set wallpaper", Toast.LENGTH_SHORT).show();
-								}
+								new Thread(() -> {
+									WallpaperManager wallManager = WallpaperManager.getInstance(getApplicationContext());
+									try {
+										wallManager.clear();
+										wallManager.setBitmap(resource);
+										runOnUiThread(() -> {
+											hideLoadingDialog();
+											Toast.makeText(getApplicationContext(), "Wallpaper set successfully!", Toast.LENGTH_SHORT).show();
+										});
+									} catch (IOException ex) {
+										ex.printStackTrace();
+										runOnUiThread(() -> {
+											hideLoadingDialog();
+											Toast.makeText(getApplicationContext(), "Failed to set wallpaper", Toast.LENGTH_SHORT).show();
+										});
+									}
+								}).start();
 							}
 
 							@Override
 							public void onLoadFailed(@Nullable Drawable errorDrawable) {
-								// Handle load failure (optional: show a toast or log the error)
+								hideLoadingDialog();
+								Toast.makeText(getApplicationContext(), "Failed to load image", Toast.LENGTH_SHORT).show();
 							}
 						});
-
 			}
 		});
 
@@ -611,6 +621,26 @@ public class WalldownloadActivity extends AppCompatActivity {
 			}
 		};
 
+	}
+
+	private void showLoadingDialog() {
+		if (loadingDialog == null) {
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			View view = getLayoutInflater().inflate(R.layout.setwall2, null);
+			builder.setView(view);
+			builder.setCancelable(false);
+			loadingDialog = builder.create();
+			if (loadingDialog.getWindow() != null) {
+				loadingDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+			}
+		}
+		loadingDialog.show();
+	}
+
+	private void hideLoadingDialog() {
+		if (loadingDialog != null && loadingDialog.isShowing()) {
+			loadingDialog.dismiss();
+		}
 	}
 
 

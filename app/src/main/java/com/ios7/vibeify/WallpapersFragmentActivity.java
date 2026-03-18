@@ -302,30 +302,42 @@ public class WallpapersFragmentActivity extends Fragment {
 				final String _tag = _param1;
 				final String _response = _param2;
 				final HashMap<String, Object> _responseHeaders = _param3;
-				walllist = new Gson().fromJson(_response, new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
-				gridview1.setAdapter(new Gridview1Adapter(walllist));
-				gridview1.setNumColumns((int) 2);
-				gridlinear.setAlpha(0);
-				if (config.getString("disableanims", "").equals("1")) {
-					gridlinear.setVisibility(View.VISIBLE);
-					gridloading.setVisibility(View.GONE);
-					gridlinear.setAlpha(1);
-				} else {
-					gridlinear.setVisibility(View.VISIBLE);
-					gridloading.setVisibility(View.GONE);
-					gridlinear.setAlpha(1);
-					EzFade.fadeIn(gridlinear, 500);
-					/*EzTimer.runWithDelay(500, () -> {
-						EzTimerLooped loopedTimer = new EzTimerLooped();
-						loopedTimer.start(1, () -> {
-							if (Math.abs(gridlinear.getAlpha() - 1) < 0.01f) {
-								loopedTimer.stop();
-							} else {
-								gridlinear.setAlpha(gridlinear.getAlpha() + 0.05f);
-							}
-						});
-					});*/
-				}
+				
+				// Offload heavy parsing to a background thread
+				new Thread(() -> {
+					try {
+						ArrayList<HashMap<String, Object>> parsedList = new Gson().fromJson(_response, new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
+						
+						// Update UI on main thread
+						Activity activity = getActivity();
+						if (activity != null) {
+							activity.runOnUiThread(() -> {
+								walllist = parsedList;
+								gridview1.setAdapter(new Gridview1Adapter(walllist));
+								gridview1.setNumColumns(2);
+								gridlinear.setAlpha(0);
+								if (config.getString("disableanims", "").equals("1")) {
+									gridlinear.setVisibility(View.VISIBLE);
+									gridloading.setVisibility(View.GONE);
+									gridlinear.setAlpha(1);
+								} else {
+									gridlinear.setVisibility(View.VISIBLE);
+									gridloading.setVisibility(View.GONE);
+									gridlinear.setAlpha(1);
+									EzFade.fadeIn(gridlinear, 500);
+								}
+							});
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						Activity activity = getActivity();
+						if (activity != null) {
+							activity.runOnUiThread(() -> {
+								Toast.makeText(getContext(), "Failed to parse data", Toast.LENGTH_SHORT).show();
+							});
+						}
+					}
+				}).start();
 			}
 
 			@Override
@@ -343,15 +355,32 @@ public class WallpapersFragmentActivity extends Fragment {
 				final String _tag = _param1;
 				final String _response = _param2;
 				final HashMap<String, Object> _responseHeaders = _param3;
-				try {
-					categorylist = new Gson().fromJson(_response, new TypeToken<ArrayList<HashMap<String, Object>>>() {
-					}.getType());
-				} catch (Exception e) {
-					noConnectionTerminator();
-				}
-				listview1.setAdapter(new Listview1Adapter(categorylist));
-				((BaseAdapter)listview1.getAdapter()).notifyDataSetChanged();
-				linearloading.setVisibility(View.GONE);
+				
+				// Offload heavy parsing to a background thread
+				new Thread(() -> {
+					try {
+						ArrayList<HashMap<String, Object>> parsedCategories = new Gson().fromJson(_response, new TypeToken<ArrayList<HashMap<String, Object>>>() {}.getType());
+						
+						// Update UI on main thread
+						Activity activity = getActivity();
+						if (activity != null) {
+							activity.runOnUiThread(() -> {
+								categorylist = parsedCategories;
+								listview1.setAdapter(new Listview1Adapter(categorylist));
+								((BaseAdapter)listview1.getAdapter()).notifyDataSetChanged();
+								linearloading.setVisibility(View.GONE);
+							});
+						}
+					} catch (Exception e) {
+						e.printStackTrace();
+						Activity activity = getActivity();
+						if (activity != null) {
+							activity.runOnUiThread(() -> {
+								noConnectionTerminator();
+							});
+						}
+					}
+				}).start();
 			}
 			
 			@Override
