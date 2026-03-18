@@ -136,7 +136,41 @@ class MainKotlinActivity : AppCompatActivity() {
         }
     }
 
+    private fun showKotlinConversionDialog() {
+        val inflater = LayoutInflater.from(this)
+        val customView = inflater.inflate(R.layout.abandon_dialog, null)
+
+        val title = customView.findViewById<TextView>(R.id.textView)
+        val message = customView.findViewById<TextView>(R.id.textView4)
+        val closebtn = customView.findViewById<TextView>(R.id.closebtn)
+        val repobtn = customView.findViewById<TextView>(R.id.repobtn)
+
+        title.text = "🚀 Kotlin Migration in Progress"
+        message.text = "The app is currently undergoing a technical migration from Java to Kotlin. While we strive for 1:1 functionality, some experimental components may behave unexpectedly during this transition.\n\nThank you for being part of this AI-driven evolution!\n- Antigravity AI"
+        repobtn.visibility = View.VISIBLE
+        repobtn.text = "Java Version"
+
+        val builder = androidx.appcompat.app.AlertDialog.Builder(this)
+        builder.setView(customView)
+
+        val dialog = builder.create()
+        dialog.window?.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(android.graphics.Color.TRANSPARENT))
+        dialog.show()
+
+        closebtn.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        repobtn.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+            dialog.dismiss()
+        }
+    }
+
     private fun initializeLogic() {
+        showKotlinConversionDialog()
         // Repository and default settings
         config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").commit()
         config.edit().putString("categories", "1").commit()
@@ -184,7 +218,7 @@ class MainKotlinActivity : AppCompatActivity() {
         config.edit().putString("disableanims", "0").commit()
         config.edit().putString("disableblur", "0").commit()
         config.edit().putString("colorextraction", "1").commit()
-        textview1.setText(R.string.app_name)
+        textview1.text = getString(R.string.app_name) + " (kotlin-ext)"
 
         if (config.getString("disableblur", "") == "") {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
