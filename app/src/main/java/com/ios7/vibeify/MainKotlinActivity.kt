@@ -326,7 +326,7 @@ class MainKotlinActivity : AppCompatActivity() {
         override fun getItem(position: Int): Fragment {
             return when (position) {
                 0 -> WallpapersFragmentActivity()
-                1 -> SettingsDialogFragmentActivity()
+                1 -> SettingsKotlinFragment()
                 2 -> ConversionStatusFragment()
                 else -> Fragment()
             }

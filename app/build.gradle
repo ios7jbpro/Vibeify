@@ -14,8 +14,8 @@ android {
 		namespace "com.ios7.vibeify"
 		minSdkVersion 27
 		targetSdkVersion 35
-		versionCode 1
-		versionName "1.5.4-tabfix"
+		versionCode 2
+		versionName "1.5.5-LLM"
 	}
 	
 	buildTypes {

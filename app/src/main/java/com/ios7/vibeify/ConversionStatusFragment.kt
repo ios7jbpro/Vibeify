@@ -16,7 +16,7 @@ class ConversionStatusFragment : Fragment() {
         ActivityStatus("MainActivity", "Kotlin (MainKotlinActivity)", "✅"),
         ActivityStatus("WallpapersFragmentActivity", "Kotlin (WallpapersActivity)", "✅"),
         ActivityStatus("WalldownloadActivity", "Kotlin Beta (WalldownloadkotlinActivity)", "🛠️"),
-        ActivityStatus("SettingsDialogFragmentActivity", "Java", "❌"),
+        ActivityStatus("SettingsDialogFragmentActivity", "Kotlin (SettingsKotlinFragment)", "✅"),
         ActivityStatus("SetupActivity1", "Java", "❌"),
         ActivityStatus("AppRestarter", "Kotlin (AppRestarterKotlin)", "✅"),
         ActivityStatus("ManualDebugEnabler", "Java", "❌"),
