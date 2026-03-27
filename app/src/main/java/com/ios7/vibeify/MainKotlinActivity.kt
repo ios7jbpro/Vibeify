@@ -120,7 +120,7 @@ class MainKotlinActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        config.edit().putString("backSignal", "1").commit()
+        config.edit().putString("backSignal", "1").apply()
 
         if (config.getString("currenttab", "") == "1") {
             Handler(Looper.getMainLooper()).postDelayed({
@@ -172,11 +172,11 @@ class MainKotlinActivity : AppCompatActivity() {
     private fun initializeLogic() {
         showKotlinConversionDialog()
         // Repository and default settings
-        config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").commit()
-        config.edit().putString("categories", "1").commit()
-        config.edit().putString("directrepo", "https://altdisk.eimaen.pw/api/download/a69b5e5031f23e06cd1af7f885de5c0c/anime.json").commit()
+        config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").apply()
+        config.edit().putString("categories", "1").apply()
+        config.edit().putString("directrepo", "https://altdisk.eimaen.pw/api/download/a69b5e5031f23e06cd1af7f885de5c0c/anime.json").apply()
         if (config.getString("timeout", "") == "") {
-            config.edit().putString("timeout", "5000").commit()
+            config.edit().putString("timeout", "5000").apply()
         }
 
         val setupFlag = config.getString("setupcomplete", "")
@@ -185,46 +185,46 @@ class MainKotlinActivity : AppCompatActivity() {
         }
 
         if (config.getString("colorextraction", "") == "") {
-            config.edit().putString("colorextraction", "1").commit()
+            config.edit().putString("colorextraction", "1").apply()
         }
         if (config.getString("disableanims", "") == "") {
-            config.edit().putString("disableanims", "0").commit()
+            config.edit().putString("disableanims", "0").apply()
         }
         if (config.getString("disableblur", "") == "") {
-            config.edit().putString("disableblur", "0").commit()
+            config.edit().putString("disableblur", "0").apply()
         }
 
         if (config.getString("forcedDebug", "") == "1") {
-            config.edit().putString("debugMode", "1").commit()
+            config.edit().putString("debugMode", "1").apply()
         } else {
-            config.edit().putString("debugMode", "0").commit()
+            config.edit().putString("debugMode", "0").apply()
         }
 
         if (android.os.Debug.isDebuggerConnected()) {
-            config.edit().putString("debugMode", "1").commit()
+            config.edit().putString("debugMode", "1").apply()
             textview1.text = "WALLIFY"
-            config.edit().putString("disableanims", "1").commit()
-            config.edit().putString("disableblur", "1").commit()
+            config.edit().putString("disableanims", "1").apply()
+            config.edit().putString("disableblur", "1").apply()
         } else if (config.getString("forcedDebug", "") == "1") {
-            config.edit().putString("debugMode", "1").commit()
+            config.edit().putString("debugMode", "1").apply()
             textview1.text = "DEBUGGER NOT ATTACHED!"
-            config.edit().putString("disableanims", "1").commit()
-            config.edit().putString("disableblur", "1").commit()
+            config.edit().putString("disableanims", "1").apply()
+            config.edit().putString("disableblur", "1").apply()
         } else {
-            config.edit().putString("debugMode", "0").commit()
+            config.edit().putString("debugMode", "0").apply()
         }
 
-        config.edit().putString("debugMode", "0").commit()
-        config.edit().putString("disableanims", "0").commit()
-        config.edit().putString("disableblur", "0").commit()
-        config.edit().putString("colorextraction", "1").commit()
+        config.edit().putString("debugMode", "0").apply()
+        config.edit().putString("disableanims", "0").apply()
+        config.edit().putString("disableblur", "0").apply()
+        config.edit().putString("colorextraction", "1").apply()
         textview1.text = getString(R.string.app_name) + " (kotlin-ext)"
 
         if (config.getString("disableblur", "") == "") {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                config.edit().putString("disableblur", "0").commit()
+                config.edit().putString("disableblur", "0").apply()
             } else {
-                config.edit().putString("disableblur", "1").commit()
+                config.edit().putString("disableblur", "1").apply()
             }
         }
 
@@ -237,7 +237,7 @@ class MainKotlinActivity : AppCompatActivity() {
                 if (position == 0) {
                     button1.setBackgroundResource(R.drawable.activetab)
                     button2.setBackgroundResource(R.drawable.roundedbgviolent)
-                    config.edit().putString("currenttab", "0").commit()
+                    config.edit().putString("currenttab", "0").apply()
                     try {
                         bottom_nav?.selectedItemId = R.id.page_1
                     } catch (e: Exception) {
@@ -247,7 +247,7 @@ class MainKotlinActivity : AppCompatActivity() {
                 if (position == 1) {
                     button2.setBackgroundResource(R.drawable.activetab)
                     button1.setBackgroundResource(R.drawable.roundedbgviolent)
-                    config.edit().putString("currenttab", "1").commit()
+                    config.edit().putString("currenttab", "1").apply()
                     try {
                         bottom_nav?.selectedItemId = R.id.page_2
                     } catch (e: Exception) {
@@ -257,7 +257,7 @@ class MainKotlinActivity : AppCompatActivity() {
                 if (position == 2) {
                     button1.setBackgroundResource(R.drawable.roundedbgviolent)
                     button2.setBackgroundResource(R.drawable.roundedbgviolent)
-                    config.edit().putString("currenttab", "2").commit()
+                    config.edit().putString("currenttab", "2").apply()
                     try {
                         bottom_nav?.selectedItemId = R.id.page_3
                     } catch (e: Exception) {

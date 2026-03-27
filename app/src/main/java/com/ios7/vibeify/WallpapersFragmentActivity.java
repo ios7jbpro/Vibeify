@@ -139,15 +139,15 @@ public class WallpapersFragmentActivity extends Fragment {
 				final int _position = _param3;
 				fetchwalljson.startRequestNetwork(RequestNetworkController.GET, config.getString("repo", "") + categorylist.get((int)_position).get("json").toString(), "", _fetchwalljson_request_listener);
 				combinedOutput = config.getString("repo", "") + categorylist.get((int)_position).get("json").toString();
-				temporaryCache.edit().putString("directrepo", categorylist.get((int)_position).get("json").toString()).commit();
+				temporaryCache.edit().putString("directrepo", categorylist.get((int)_position).get("json").toString()).apply();
 				gridlinear.setVisibility(View.GONE);
 				gridfadelinear.setVisibility(View.VISIBLE);
 				listview1.setVisibility(View.GONE);
 				gridlinear.setAlpha(0);
 				gridfadelinear.setAlpha(0);
 				isGridVisible = true;
-				config.edit().putString("fragmentCanExit", "0").commit();
-				config.edit().putString("categoryName", categorylist.get((int)_position).get("category").toString()).commit();
+				config.edit().putString("fragmentCanExit", "0").apply();
+				config.edit().putString("categoryName", categorylist.get((int)_position).get("category").toString()).apply();
 				if (config.getString("disableanims", "").equals("1")) {
 					gridfadelinear.setVisibility(View.VISIBLE);
 					gridlinear.setVisibility(View.GONE);
@@ -178,7 +178,7 @@ public class WallpapersFragmentActivity extends Fragment {
 			@Override
 			public void run() {
 				if (config.getString("backSignal", "").equals("1")) {
-					config.edit().putString("backSignal", "0").commit();
+					config.edit().putString("backSignal", "0").apply();
 					if (config.getString("currenttab", "").equals("0")) {
 						if (isGridVisible) {
 							gridfadelinear.setVisibility(View.GONE);
@@ -187,7 +187,7 @@ public class WallpapersFragmentActivity extends Fragment {
 							listview1.setVisibility(View.VISIBLE);
 							listview1.setAlpha(0);
 							isGridVisible = false;
-							config.edit().putString("fragmentCanExit", "1").commit();
+							config.edit().putString("fragmentCanExit", "1").apply();
 							if (config.getString("disableanims", "").equals("1")) {
 								gridfadelinear.setVisibility(View.GONE);
 								gridlinear.setVisibility(View.GONE);
@@ -265,10 +265,10 @@ public class WallpapersFragmentActivity extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> _param1, View _param2, int _param3, long _param4) {
 				final int _position = _param3;
-				selectedItemList.edit().putString("selectedWall", String.valueOf(_position)).commit();
+				selectedItemList.edit().putString("selectedWall", String.valueOf(_position)).apply();
 				Log.d("WallpaperDebug", "Setting selected wall to = '" + String.valueOf((long)(_position)) + "'");
 				// Set wallpaperName on config
-				config.edit().putString("wallpaperName", walllist.get((int)_position).get("name").toString()).commit();
+				config.edit().putString("wallpaperName", walllist.get((int)_position).get("name").toString()).apply();
 				launchWallPreview.putExtra("wallpaperLink", walllist.get((int) _position).get("link").toString());
 				launchWallPreview.setClass(getContext().getApplicationContext(), WalldownloadActivity.class);
 				startActivity(launchWallPreview);
@@ -281,10 +281,10 @@ public class WallpapersFragmentActivity extends Fragment {
 				final int _position = _param3;
 				if (config.getString("debugMode", "").equals("1")) {
 					Toast.makeText(getContext(), "Launching the new beta kotlin activity", Toast.LENGTH_SHORT).show();
-					selectedItemList.edit().putString("selectedWall", String.valueOf(_position)).commit();
+					selectedItemList.edit().putString("selectedWall", String.valueOf(_position)).apply();
 					Log.d("WallpaperDebug", "Setting selected wall to = '" + String.valueOf((long) (_position)) + "'");
 					// Set wallpaperName on config
-					config.edit().putString("wallpaperName", walllist.get((int) _position).get("name").toString()).commit();
+					config.edit().putString("wallpaperName", walllist.get((int) _position).get("name").toString()).apply();
 					launchWallPreview.putExtra("wallpaperName", walllist.get((int) _position).get("name").toString());
 					launchWallPreview.putExtra("wallpaperLink", walllist.get((int) _position).get("link").toString());
 					launchWallPreview.setClass(getContext().getApplicationContext(), WalldownloadkotlinActivity.class);
@@ -415,7 +415,7 @@ public class WallpapersFragmentActivity extends Fragment {
 				}
 			};
 			_timer.schedule(loadDelay, (int)(250));
-			temporaryCache.edit().putString("firstTimeLoad", "0").commit();
+			temporaryCache.edit().putString("firstTimeLoad", "0").apply();
 		} else {
 				fetchcategoryjson.startRequestNetwork(RequestNetworkController.GET, config.getString("repo", "") + "categories.json", "", _fetchcategoryjson_request_listener);
 		}
@@ -439,9 +439,11 @@ public class WallpapersFragmentActivity extends Fragment {
 	public class Listview1Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
+		String repoPrefix;
 		
 		public Listview1Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
+			repoPrefix = config.getString("repo", "");
 		}
 		
 		@Override
@@ -484,7 +486,7 @@ public class WallpapersFragmentActivity extends Fragment {
 			if (config.getString("debugMode", "").equals("1")) {
 				textview1.setText(categorylist.get((int)_position).get("category").toString()+"(index:"+_position+")");
 			}
-			Glide.with(getContext().getApplicationContext()).load(Uri.parse(config.getString("repo", "") + categorylist.get((int)_position).get("preview").toString())).into(imageview1);
+			Glide.with(getContext().getApplicationContext()).load(Uri.parse(repoPrefix + categorylist.get((int)_position).get("preview").toString())).into(imageview1);
 			linear2.setClipToOutline(true);
 			if (config.getString("disableanims", "").equals("1")) {
 				linear1.setVisibility(View.VISIBLE);
@@ -510,9 +512,11 @@ public class WallpapersFragmentActivity extends Fragment {
 	public class Gridview1Adapter extends BaseAdapter {
 		
 		ArrayList<HashMap<String, Object>> _data;
+		String repoPrefix;
 		
 		public Gridview1Adapter(ArrayList<HashMap<String, Object>> _arr) {
 			_data = _arr;
+			repoPrefix = config.getString("repo", "");
 		}
 		
 		@Override
@@ -547,7 +551,7 @@ public class WallpapersFragmentActivity extends Fragment {
 			isPfp = false;
 			linear1.setAlpha(0);
 
-			Glide.with(getContext().getApplicationContext()).load(Uri.parse(config.getString("repo", "") + walllist.get((int)_position).get("lowprew").toString())).into(wallimage);
+			Glide.with(getContext().getApplicationContext()).load(Uri.parse(repoPrefix + walllist.get((int)_position).get("lowprew").toString())).into(wallimage);
 			// If "name" equals a blank space, hide linear3
 			if (walllist.get((int)_position).get("name").toString().equals("")) {
 				linear3.setVisibility(View.GONE);
@@ -574,11 +578,15 @@ public class WallpapersFragmentActivity extends Fragment {
 					wallname.setText(original);
 				}
 				if (isPfp) {
+					// Use a more efficient way to maintain aspect ratio without blocking UI thread
 					linear2.post(() -> {
-						int width = linear2.getWidth();
-						ViewGroup.LayoutParams params = linear2.getLayoutParams();
-						params.height = width;
-						linear2.setLayoutParams(params);
+						if (linear2.getWidth() > 0) {
+							ViewGroup.LayoutParams params = linear2.getLayoutParams();
+							if (params.height != linear2.getWidth()) {
+								params.height = linear2.getWidth();
+								linear2.setLayoutParams(params);
+							}
+						}
 					});
 				}
 				if (config.getString("debugMode", "").equals("1")) {

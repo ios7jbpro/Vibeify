@@ -303,7 +303,7 @@ public class WalldownloadActivity extends AppCompatActivity {
 					return true;
 				} else {
 					Toast.makeText(getApplicationContext(), "Using the legacy wallpaper loader", Toast.LENGTH_SHORT).show();
-					wallLink.edit().putString("wallLink", config.getString("repo", "")+walljsonlistmap.get((int)Double.parseDouble(selectedItemList.getString("selectedWall", ""))).get("link").toString()).commit();
+					wallLink.edit().putString("wallLink", config.getString("repo", "")+walljsonlistmap.get((int)Double.parseDouble(selectedItemList.getString("selectedWall", ""))).get("link").toString()).apply();
 					Intent legacyWallLauncher = new Intent(getApplicationContext(), Setwall1Activity.class);
 					startActivity(legacyWallLauncher);
 					return true;
@@ -572,7 +572,7 @@ public class WalldownloadActivity extends AppCompatActivity {
 					textview1.setText(config.getString("categoryName", ""));
 				}
 				try {
-					wallLink.edit().putString("wallLink", walljsonlistmap.get((int) Double.parseDouble(selectedItemList.getString("selectedWall", ""))).get("link").toString()).commit();
+					wallLink.edit().putString("wallLink", walljsonlistmap.get((int) Double.parseDouble(selectedItemList.getString("selectedWall", ""))).get("link").toString()).apply();
 				} catch (Exception e) {
 					Log.e("WallpaperDebug", "Exception: " + e.getMessage());
 					//Log.e("WallpaperDebug", "Tried to load in:" + config.getString("repo", "") + walljsonlistmap.get((int)Integer.parseInt(selectedItemList.getString("selectedWall", "0"))).get("lowprew").toString());
@@ -757,7 +757,7 @@ public class WalldownloadActivity extends AppCompatActivity {
 			// Do nothing
 		} else {
 			EzTimer.runWithDelay(1000, () -> {
-			if (isPfp = true) { // Note: This is an assignment, not a comparison. Should be isPfp == true or simply isPfp
+			if (isPfp) {
 				// Do nothing
 			} else {
 				new TapTargetSequence(this)

@@ -110,15 +110,15 @@ class WallpapersActivity : AppCompatActivity() {
             val jsonPath = categorylist[position]["json"].toString()
             fetchwalljson.startRequestNetwork(RequestNetworkController.GET, config.getString("repo", "") + jsonPath, "", _fetchwalljson_request_listener)
             combinedOutput = config.getString("repo", "") + jsonPath
-            temporaryCache.edit().putString("directrepo", jsonPath).commit()
+            temporaryCache.edit().putString("directrepo", jsonPath).apply()
             gridlinear.visibility = View.GONE
             gridfadelinear.visibility = View.VISIBLE
             listview1.visibility = View.GONE
             gridlinear.alpha = 0f
             gridfadelinear.alpha = 0f
             isGridVisible = true
-            config.edit().putString("fragmentCanExit", "0").commit()
-            config.edit().putString("categoryName", categorylist[position]["category"].toString()).commit()
+            config.edit().putString("fragmentCanExit", "0").apply()
+            config.edit().putString("categoryName", categorylist[position]["category"].toString()).apply()
             
             if (config.getString("disableanims", "") == "1") {
                 gridfadelinear.visibility = View.VISIBLE
@@ -137,7 +137,7 @@ class WallpapersActivity : AppCompatActivity() {
         val runnable = object : Runnable {
             override fun run() {
                 if (config.getString("backSignal", "") == "1") {
-                    config.edit().putString("backSignal", "0").commit()
+                    config.edit().putString("backSignal", "0").apply()
                     if (config.getString("currenttab", "") == "0") {
                         if (isGridVisible) {
                             gridfadelinear.visibility = View.GONE
@@ -146,7 +146,7 @@ class WallpapersActivity : AppCompatActivity() {
                             listview1.visibility = View.VISIBLE
                             listview1.alpha = 0f
                             isGridVisible = false
-                            config.edit().putString("fragmentCanExit", "1").commit()
+                            config.edit().putString("fragmentCanExit", "1").apply()
                             if (config.getString("disableanims", "") == "1") {
                                 gridfadelinear.visibility = View.GONE
                                 gridlinear.visibility = View.GONE
@@ -184,9 +184,9 @@ class WallpapersActivity : AppCompatActivity() {
         }
 
         gridview1.onItemClickListener = AdapterView.OnItemClickListener { _, _, position, _ ->
-            selectedItemList.edit().putString("selectedWall", position.toString()).commit()
+            selectedItemList.edit().putString("selectedWall", position.toString()).apply()
             Log.d("WallpaperDebug", "Setting selected wall to = '$position'")
-            config.edit().putString("wallpaperName", walllist[position]["name"].toString()).commit()
+            config.edit().putString("wallpaperName", walllist[position]["name"].toString()).apply()
             launchWallPreview.putExtra("wallpaperLink", walllist[position]["link"].toString())
             launchWallPreview.setClass(applicationContext, WalldownloadActivity::class.java)
             startActivity(launchWallPreview)
@@ -195,9 +195,9 @@ class WallpapersActivity : AppCompatActivity() {
         gridview1.onItemLongClickListener = AdapterView.OnItemLongClickListener { _, _, position, _ ->
             if (config.getString("debugMode", "") == "1") {
                 Toast.makeText(this, "Launching the new beta kotlin activity", Toast.LENGTH_SHORT).show()
-                selectedItemList.edit().putString("selectedWall", position.toString()).commit()
+                selectedItemList.edit().putString("selectedWall", position.toString()).apply()
                 Log.d("WallpaperDebug", "Setting selected wall to = '$position'")
-                config.edit().putString("wallpaperName", walllist[position]["name"].toString()).commit()
+                config.edit().putString("wallpaperName", walllist[position]["name"].toString()).apply()
                 launchWallPreview.putExtra("wallpaperName", walllist[position]["name"].toString())
                 launchWallPreview.putExtra("wallpaperLink", walllist[position]["link"].toString())
                 launchWallPreview.setClass(applicationContext, WalldownloadkotlinActivity::class.java)
@@ -297,7 +297,7 @@ class WallpapersActivity : AppCompatActivity() {
                 }
             }
             _timer.schedule(loadDelay, 250)
-            temporaryCache.edit().putString("firstTimeLoad", "0").commit()
+            temporaryCache.edit().putString("firstTimeLoad", "0").apply()
         } else {
             fetchcategoryjson.startRequestNetwork(RequestNetworkController.GET, config.getString("repo", "") + "categories.json", "", _fetchcategoryjson_request_listener)
         }
@@ -323,6 +323,7 @@ class WallpapersActivity : AppCompatActivity() {
     }
 
     inner class Listview1Adapter(private val _data: ArrayList<HashMap<String, Any>>) : BaseAdapter() {
+        private val repoPrefix = config.getString("repo", "")
         override fun getCount(): Int = _data.size
         override fun getItem(index: Int): HashMap<String, Any> = _data[index]
         override fun getItemId(index: Int): Long = index.toLong()
@@ -349,7 +350,7 @@ class WallpapersActivity : AppCompatActivity() {
                 textview1.text = "${_data[position]["category"]}(index:$position)"
             }
             
-            Glide.with(applicationContext).load(Uri.parse(config.getString("repo", "") + _data[position]["preview"].toString())).into(imageview1)
+            Glide.with(applicationContext).load(Uri.parse(repoPrefix + _data[position]["preview"].toString())).into(imageview1)
             linear2.clipToOutline = true
             
             if (config.getString("disableanims", "") == "1") {
@@ -364,6 +365,7 @@ class WallpapersActivity : AppCompatActivity() {
     }
 
     inner class Gridview1Adapter(private val _data: ArrayList<HashMap<String, Any>>) : BaseAdapter() {
+        private val repoPrefix = config.getString("repo", "")
         override fun getCount(): Int = _data.size
         override fun getItem(index: Int): HashMap<String, Any> = _data[index]
         override fun getItemId(index: Int): Long = index.toLong()
@@ -383,7 +385,7 @@ class WallpapersActivity : AppCompatActivity() {
             var isPfp = false
             linear1.alpha = 0f
 
-            Glide.with(applicationContext).load(Uri.parse(config.getString("repo", "") + _data[position]["lowprew"].toString())).into(wallimage)
+            Glide.with(applicationContext).load(Uri.parse(repoPrefix + _data[position]["lowprew"].toString())).into(wallimage)
 
             if (_data[position]["name"].toString() == "") {
                 linear3.visibility = View.GONE
@@ -407,10 +409,13 @@ class WallpapersActivity : AppCompatActivity() {
                 
                 if (isPfp) {
                     linear2.post {
-                        val width = linear2.width
-                        val params = linear2.layoutParams
-                        params.height = width
-                        linear2.layoutParams = params
+                        if (linear2.width > 0) {
+                            val params = linear2.layoutParams
+                            if (params.height != linear2.width) {
+                                params.height = linear2.width
+                                linear2.layoutParams = params
+                            }
+                        }
                     }
                 }
                 if (config.getString("debugMode", "") == "1") {

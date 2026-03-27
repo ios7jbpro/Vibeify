@@ -168,14 +168,15 @@ public class RequestNetworkController {
 				@Override
 				public void onResponse(Call call, final Response response) throws IOException {
 					final String responseBody = response.body().string().trim();
+					final Headers headers = response.headers();
+					final HashMap<String, Object> map = new HashMap<>();
+					for (String s : headers.names()) {
+						map.put(s, headers.get(s) != null ? headers.get(s) : "null");
+					}
+
 					requestNetwork.getActivity().runOnUiThread(new Runnable() {
 						@Override
 						public void run() {
-							Headers b = response.headers();
-							HashMap<String, Object> map = new HashMap<>();
-							for (String s : b.names()) {
-								map.put(s, b.get(s) != null ? b.get(s) : "null");
-							}
 							requestListener.onResponse(tag, responseBody, map);
 						}
 					});

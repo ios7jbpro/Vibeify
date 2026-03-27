@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
 
 		 @Override
 		 public void onBackPressed() {
-			 config.edit().putString("backSignal", "1").commit();
+			 config.edit().putString("backSignal", "1").apply();
 
 			 if (config.getString("currenttab", "").equals("1")) {
 				 new Handler().postDelayed(new Runnable() {
@@ -215,12 +215,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 	private void initializeLogic() {
-		config.edit().putString("repo", "https://ihs.ios7.xyz/wallify-api/categories.json").commit();
-		config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").commit();
-		config.edit().putString("categories", "1").commit();
-		config.edit().putString("directrepo", "https://altdisk.eimaen.pw/api/download/a69b5e5031f23e06cd1af7f885de5c0c/anime.json").commit();
+		config.edit().putString("repo", "https://ihs.ios7.xyz/wallify-api/categories.json").apply();
+		config.edit().putString("repo", "https://raw.githubusercontent.com/j1459863h/wallify-walls/refs/heads/main/").apply();
+		config.edit().putString("categories", "1").apply();
+		config.edit().putString("directrepo", "https://altdisk.eimaen.pw/api/download/a69b5e5031f23e06cd1af7f885de5c0c/anime.json").apply();
 		if (config.getString("timeout", "").equals("")) {
-			config.edit().putString("timeout", "5000").commit();
+			config.edit().putString("timeout", "5000").apply();
 		}
 		String setupFlag = config.getString("setupcomplete", "");
 		Log.d("DEBUG", "setupcomplete read: " + setupFlag);
@@ -230,40 +230,40 @@ public class MainActivity extends AppCompatActivity {
 			startActivity(new Intent(MainActivity.this, SetupActivity1.class));
 		}
 		if (config.getString("colorextraction", "").equals("")) {
-			config.edit().putString("colorextraction", "1").commit();
+			config.edit().putString("colorextraction", "1").apply();
 		}
 		if (config.getString("disableanims", "").equals("")) {
-			config.edit().putString("disableanims", "0").commit();
+			config.edit().putString("disableanims", "0").apply();
 		}
 		if (config.getString("disableblur", "").equals("")) {
-			config.edit().putString("disableblur", "0").commit();
+			config.edit().putString("disableblur", "0").apply();
 		}
 
 
 		if (config.getString("forcedDebug", "").equals("1")) {
-			config.edit().putString("debugMode", "1").commit();
+			config.edit().putString("debugMode", "1").apply();
 		} else {
-			config.edit().putString("debugMode", "0").commit();
+			config.edit().putString("debugMode", "0").apply();
 		}
 
 		if (android.os.Debug.isDebuggerConnected()) {
-			config.edit().putString("debugMode", "1").commit();
+			config.edit().putString("debugMode", "1").apply();
 			textview1.setText("WALLIFY");
-			config.edit().putString("disableanims", "1").commit();
-			config.edit().putString("disableblur", "1").commit();
+			config.edit().putString("disableanims", "1").apply();
+			config.edit().putString("disableblur", "1").apply();
 		} else if (config.getString("forcedDebug", "").equals("1")) {
-			config.edit().putString("debugMode", "1").commit();
+			config.edit().putString("debugMode", "1").apply();
 			textview1.setText("DEBUGGER NOT ATTACHED!");
-			config.edit().putString("disableanims", "1").commit();
-			config.edit().putString("disableblur", "1").commit();
+			config.edit().putString("disableanims", "1").apply();
+			config.edit().putString("disableblur", "1").apply();
 		} else {
-			config.edit().putString("debugMode", "0").commit();
+			config.edit().putString("debugMode", "0").apply();
 		}
 
-		config.edit().putString("debugMode", "0").commit();
-		config.edit().putString("disableanims", "0").commit();
-		config.edit().putString("disableblur", "0").commit();
-		config.edit().putString("colorextraction", "1").commit();
+		config.edit().putString("debugMode", "0").apply();
+		config.edit().putString("disableanims", "0").apply();
+		config.edit().putString("disableblur", "0").apply();
+		config.edit().putString("colorextraction", "1").apply();
 		textview1.setText(R.string.app_name);
 
 
@@ -273,9 +273,9 @@ public class MainActivity extends AppCompatActivity {
 
 		if (config.getString("disableblur", "").equals("")) {
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) { 
-				config.edit().putString("disableblur", "0").commit();
+				config.edit().putString("disableblur", "0").apply();
 			} else {
-				config.edit().putString("disableblur", "1").commit();
+				config.edit().putString("disableblur", "1").apply();
 			}
 		} else {
 			// Nothing
@@ -293,7 +293,7 @@ public class MainActivity extends AppCompatActivity {
 				if (position == 0) {
 					button1.setBackgroundResource(R.drawable.activetab);
 					button2.setBackgroundResource(R.drawable.roundedbgviolent);
-					config.edit().putString("currenttab", "0").commit();
+					config.edit().putString("currenttab", "0").apply();
 					try {
 						bottom_nav.setSelectedItemId(R.id.page_1);
 					} catch (Exception e) {
@@ -304,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
 				if (position == 1) {
 					button2.setBackgroundResource(R.drawable.activetab);
 					button1.setBackgroundResource(R.drawable.roundedbgviolent);
-					config.edit().putString("currenttab", "1").commit();
+					config.edit().putString("currenttab", "1").apply();
 					try {
 						bottom_nav.setSelectedItemId(R.id.page_2);
 					} catch (Exception e) {
