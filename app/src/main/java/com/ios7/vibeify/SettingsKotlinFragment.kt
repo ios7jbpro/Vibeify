@@ -32,7 +32,7 @@ import java.net.HttpURLConnection
 import java.net.URL
 import java.util.*
 
-class SettingsKotlinFragment : DialogFragment() {
+open class SettingsKotlinFragment : DialogFragment() {
 
     private lateinit var linear1: LinearLayout
     private lateinit var textview5: TextView

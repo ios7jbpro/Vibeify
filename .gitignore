@@ -1,0 +1,17 @@
+# Android/Gradle
+.gradle/
+build/
+app/build/
+local.properties
+
+# Kotlin
+.kotlin/
+
+# IDE
+.idea/caches/
+.idea/modules/
+.idea/workspace.xml
+
+# OS
+Thumbs.db
+.DS_Store

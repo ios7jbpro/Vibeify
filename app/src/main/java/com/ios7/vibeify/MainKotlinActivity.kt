@@ -36,7 +36,7 @@ import java.net.URL
 import java.util.*
 import org.json.*
 
-class MainKotlinActivity : AppCompatActivity() {
+open class MainKotlinActivity : AppCompatActivity() {
 
     private lateinit var linear1: LinearLayout
     private lateinit var viewpager1: ViewPager
@@ -228,7 +228,7 @@ class MainKotlinActivity : AppCompatActivity() {
             }
         }
 
-        pageLoaderInit.tabCount = 3
+        pageLoaderInit.tabCount = 2
         viewpager1.adapter = pageLoaderInit
         viewpager1.addOnPageChangeListener(object : OnPageChangeListener {
             override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
@@ -254,16 +254,6 @@ class MainKotlinActivity : AppCompatActivity() {
                         Log.d("DEBUG", "Bottom nav not found")
                     }
                 }
-                if (position == 2) {
-                    button1.setBackgroundResource(R.drawable.roundedbgviolent)
-                    button2.setBackgroundResource(R.drawable.roundedbgviolent)
-                    config.edit().putString("currenttab", "2").apply()
-                    try {
-                        bottom_nav?.selectedItemId = R.id.page_3
-                    } catch (e: Exception) {
-                        Log.d("DEBUG", "Bottom nav not found")
-                    }
-                }
             }
 
             override fun onPageScrollStateChanged(state: Int) {}
@@ -279,10 +269,6 @@ class MainKotlinActivity : AppCompatActivity() {
                     }
                     R.id.page_2 -> {
                         viewpager1.currentItem = 1
-                        true
-                    }
-                    R.id.page_3 -> {
-                        viewpager1.currentItem = 2
                         true
                     }
                     else -> false
@@ -302,10 +288,6 @@ class MainKotlinActivity : AppCompatActivity() {
                         viewpager1.currentItem = 1
                         true
                     }
-                    R.id.page_3 -> {
-                        viewpager1.currentItem = 2
-                        true
-                    }
                     else -> false
                 }
             }
@@ -319,7 +301,7 @@ class MainKotlinActivity : AppCompatActivity() {
     inner class PageLoaderInitFragmentAdapter(context: Context, manager: FragmentManager) :
         FragmentStatePagerAdapter(manager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
-        var tabCount: Int = 3
+        var tabCount: Int = 2
 
         override fun getCount(): Int = tabCount
 
@@ -327,7 +309,6 @@ class MainKotlinActivity : AppCompatActivity() {
             return when (position) {
                 0 -> WallpapersFragmentActivity()
                 1 -> SettingsKotlinFragment()
-                2 -> ConversionStatusFragment()
                 else -> Fragment()
             }
         }
